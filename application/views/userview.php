@@ -52,6 +52,39 @@
 
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
+		<br>
+		<br>
+		<br>
+		<!-- Tabla de datos -->
+			<div class="row">
+				<div class="card col-12">
+					<div class="card-header">
+						<h4>Tabla de personas</h4>
+					</div>
+					<div class="card-body">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th scope="col">id</th>
+									<th scope="col">First Name</th>
+									<th scope="col">Last Name</th>
+									<th scope="col">Email</th>
+									<th scope="col">Telephone</th>
+									<th scope="col">gender</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php 
+									$count = 0;
+								
+								?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
             </form>
 
