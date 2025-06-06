@@ -24,6 +24,11 @@ class Usercrud extends CI_Controller {
 	}
 
 	public function guardar(){
-		echo 'guardando';
+		$user =[];
+			$user ['first_name'] = $this->input->post('first_name');
+			$user ['last_name'] = $this->input->post('last_name');
+			$user ['email']     = $this->input->post('email');
+			$user ['telephone'] = $this->input->post('telephone');
+			$user ['gender']    = $this->input->post('gender');		
 	}
 }
