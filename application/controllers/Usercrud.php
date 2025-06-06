@@ -9,7 +9,9 @@ class Usercrud extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('userview');
+		$data['users'] = $this->User_->selectAll();
+		var_dump($data);
+		//$this->load->view('userview');
 	}
 
 	public function guardar(){

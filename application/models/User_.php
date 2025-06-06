@@ -8,5 +8,11 @@ class User_ extends CI_Model{
 	function guardar($user) {
 			$this->db->insert('user_', $user);
 		}
+
+	function selectAll() {
+			$this->db->select('*');
+			$this->db->from('user_');
+			return 	$this->db->get()->result();
+		}
 }
 ?>
