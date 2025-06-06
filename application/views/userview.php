@@ -49,57 +49,62 @@
                 </div>
 
                 <div class="col-12">
-
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
-		<br>
-		<br>
-		<br>
-		<!-- Tabla de datos -->
-			<div class="row">
-				<div class="card col-12">
-					<div class="card-header">
-						<h4>Users table</h4>
-					</div>
-					<div class="card-body">
-						<table class="table table-striped">
-							<thead>
-								<tr>
-									<th scope="col">id</th>
-									<th scope="col">First Name</th>
-									<th scope="col">Last Name</th>
-									<th scope="col">Email</th>
-									<th scope="col">Telephone</th>
-									<th scope="col">gender</th>
-								</tr>
-							</thead>
-							<tbody>
-									<?php 
-									$count = 0;
-									foreach ($users as $user) {
-										echo '
-											<tr>
-												<td>'.++$count.'</td>
-												<td>'.$user->first_name.' </td>
-												<td>'.$user->last_name.'</td>
-												<td>'.$user->email.'</td>
-												<td>'.$user->telephone.'</td>
-												<td>'.$user->gender.'</td>													
-											</tr>
-										';
-									}
-								?>
-							</tbody>
-						</table>
+				<br>
+				<br>
+				<br>
+				<!-- Tabla de datos -->
+				<div class="row">
+					<div class="card col-12">
+						<div class="card-header">
+							<h4>Users table</h4>
+						</div>
+						<div class="card-body">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col">id</th>
+										<th scope="col">First Name</th>
+										<th scope="col">Last Name</th>
+										<th scope="col">Email</th>
+										<th scope="col">Telephone</th>
+										<th scope="col">gender</th>
+									</tr>
+								</thead>
+								<tbody>
+										<?php 
+										$count = 0;
+										foreach ($users as $user) {
+											echo '
+												<tr>
+													<td>'.++$count.'</td>
+													<td>'.$user->first_name.' </td>
+													<td>'.$user->last_name.'</td>
+													<td>'.$user->email.'</td>
+													<td>'.$user->telephone.'</td>
+													<td>'.$user->gender.'</td>
+													<td><button type="button" class="btn btn-warning text-white" onclick="llenar_datos('.$user->id.', `'.$user->first_name.'`, `'.$user->last_name.'`, `'.$user->email.'`, `'.$user->telephone.'`, `'.$user->gender.'`)">Editar</button></td>
+													
+												</tr>
+											';
+										}
+									?>
+								</tbody>
+							</table>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-
-
-            </form>
-
+			</form>
         </div>
     </main>
+		<script>
+			let url = "<?php echo base_url('Usercrud/editar'); ?>";
+			const llenar_datos = (id, first_name, last_name, email, telphone, gender) => {
+				console.log(id, first_name, last_name, email, telphone, gender);
+			};
+		
+		</script>
 </body>
 </html>
