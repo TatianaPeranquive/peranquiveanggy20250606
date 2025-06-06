@@ -59,7 +59,7 @@
 			<div class="row">
 				<div class="card col-12">
 					<div class="card-header">
-						<h4>Tabla de personas</h4>
+						<h4>Users table</h4>
 					</div>
 					<div class="card-body">
 						<table class="table table-striped">
