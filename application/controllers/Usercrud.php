@@ -14,19 +14,28 @@ class Usercrud extends CI_Controller {
 	}
 
 	public function guardar(){
-			$user['first_name'] = $this->input->post('first_name');
-			$user['last_name'] = $this->input->post('last_name');
-			$user['email']     = $this->input->post('email');
-			$user['telephone'] = $this->input->post('telephone');
-			$user['gender']    = $this->input->post('gender');	
-			$this->User_->guardar($user);
+		$user['first_name'] = $this->input->post('first_name');
+		$user['last_name'] = $this->input->post('last_name');
+		$user['email']     = $this->input->post('email');
+		$user['telephone'] = $this->input->post('telephone');
+		$user['gender']    = $this->input->post('gender');
+		$this->User_->guardar($user);
 	}
-		public function editar(){
-			$user['first_name'] = $this->input->post('first_name');
-			$user['last_name'] = $this->input->post('last_name');
-			$user['email']     = $this->input->post('email');
-			$user['telephone'] = $this->input->post('telephone');
-			$user['gender']    = $this->input->post('gender');	
-			$this->User_->guardar($user);
+	public function editar(){
+		$user['id'] 		= $this->input->post('id');
+		$user['first_name'] = $this->input->post('first_name');
+		$user['last_name']  = $this->input->post('last_name');
+		$user['email']      = $this->input->post('email');
+		$user['telephone']  = $this->input->post('telephone');
+		$user['gender']     = $this->input->post('gender');
+		$this->User_->actualizar($user);
 	}
+
+		public function eliminar($id = null) {
+		if (!$id || !is_numeric($id)) {
+			show_error('ID inválido');
+		}
+		$this->User_->eliminar(intval($id));
+	}
+
 }

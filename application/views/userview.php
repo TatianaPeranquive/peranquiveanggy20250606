@@ -22,8 +22,10 @@
                 action="guardar"
                 class="row g-3"
                 method="post"
-                autocomplete="off"
+                autocomplete="off"			
             >
+			<input type="hidden" name="id" id="id" />
+
                 <div class="col-md-6">
                     <label for="first_name" class="form-label">First Name</label>
                     <input
@@ -143,6 +145,14 @@
                                                         Editar
                                                     </button>
                                                 </td>
+												<td> <button
+														type="button"
+														class="btn btn-danger eliminar-btn"
+														data-id="'.$user->id.'"
+													 >
+														Eliminar
+													</button>
+												</td>
                                             </tr>
                                         ';
                                     }
@@ -185,6 +195,9 @@
                 document.getElementById("email").value = email;
                 document.getElementById("telephone").value = telephone;
                 document.getElementById("gender").value = gender;
+				//Guardar el id al presionar Editar
+				document.getElementById("id").value = id;
+
             }
 
             // Asignar evento a todos los botones "Editar"
@@ -201,6 +214,16 @@
                 });
             });
         });
+
+		//Eliminar user
+		document.querySelectorAll(".eliminar-btn").forEach((btn) => {
+			btn.addEventListener("click", () => {
+				const id = btn.dataset.id;
+				if (confirm("¿Estás seguro de que deseas eliminar este usuario?")) {
+					window.location.href = `Usercrud/eliminar/${id}`;
+				}
+			});
+		});
     </script>
 </body>
 </html>
