@@ -74,9 +74,20 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php 
+									<?php 
 									$count = 0;
-								
+									foreach ($users as $user) {
+										echo '
+											<tr>
+												<td>'.++$count.'</td>
+												<td>'.$user->first_name.' </td>
+												<td>'.$user->last_name.'</td>
+												<td>'.$user->email.'</td>
+												<td>'.$user->telephone.'</td>
+												<td>'.$user->gender.'</td>													
+											</tr>
+										';
+									}
 								?>
 							</tbody>
 						</table>
