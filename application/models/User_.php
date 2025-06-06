@@ -12,7 +12,8 @@ class User_ extends CI_Model{
 
 	function actualizar($user) {
 		$this->db->where('id', $user['id']);
-			$this->db->update('user_', $user);
+		unset($user['id']);
+		$this->db->update('user_', $user);
 	}
 
 	function selectAll() {

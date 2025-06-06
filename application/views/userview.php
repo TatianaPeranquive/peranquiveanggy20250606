@@ -19,7 +19,7 @@
 
             <form
                 id="form-user"
-                action="guardar"
+                action="<?= base_url('Usercrud/guardar') ?>"
                 class="row g-3"
                 method="post"
                 autocomplete="off"			
@@ -187,9 +187,9 @@
                     telephone,
                     gender,
                 });
-                const path = url + "/" + id;
+                //const path = url + "/" + id;
                 const form = document.getElementById("form-user");
-                form.setAttribute("action", path);
+                //form.setAttribute("action", path);
                 document.getElementById("first_name").value = first_name;
                 document.getElementById("last_name").value = last_name;
                 document.getElementById("email").value = email;
